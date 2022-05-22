@@ -31,16 +31,22 @@ const App = () => {
 
   const initialValue = 0;
  
+  //Get sum of all clicks
   const sumWithInitial = allClicks.reduce(
     (previousValue, currentValue) => previousValue + currentValue, initialValue);
 
-
-    const avgWithInitial = averageClicks.reduce(
-      (previousValue, currentValue) => previousValue + currentValue, initialValue);
+  
+  //Get average of all clicks
+  const avgWithInitial = averageClicks.reduce(
+     (previousValue, currentValue) => previousValue + currentValue, initialValue);
   
   const averageArray = (avgWithInitial/averageClicks.length) || 0;
-  console.log('All Clicks length' , allClicks.length);
-  console.log('Average array', averageArray);
+    console.log('All Clicks length' , allClicks.length);
+    console.log('Average array', averageArray);
+
+  //Get positive vote percentage
+  const positivePercent = (good/sumWithInitial)*100 + '%';   
+
 
   return (
     <div>
@@ -58,6 +64,7 @@ const App = () => {
       <p>bad {bad}</p>
       <p>all {sumWithInitial}</p>
       <p>average {averageArray}</p>
+      <p>positive {positivePercent}</p>
 
     </div>
   )
