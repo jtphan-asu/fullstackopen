@@ -9,21 +9,27 @@ const App = () => {
 
   //handle good click
   const handleGoodClick = () => {
-    setAll(allClicks.concat('1'))
+    setAll(allClicks.concat(1))
     setGood(good + 1)
   }
 
   //handle neutral click
   const handleNeutralClick = () => {
-    setAll(allClicks.concat('1'))
+    setAll(allClicks.concat(1))
     setNeutral(neutral + 1)
   }
   
   //handle bad clicks
   const handleBadClicks = () => {
-    setAll(allClicks.concat('1'))
+    setAll(allClicks.concat(1))
     setBad(bad +1)
   }
+
+  const initialValue = 0;
+ 
+  const sumWithInitial = allClicks.reduce(
+    (previousValue, currentValue) => previousValue + currentValue, initialValue);
+  console.log(sumWithInitial);
 
   return (
     <div>
@@ -39,6 +45,7 @@ const App = () => {
       <p>good {good}</p>
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
+      <p>all {sumWithInitial}</p>
 
     </div>
   )
