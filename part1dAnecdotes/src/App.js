@@ -12,13 +12,32 @@ const App = () => {
   ]
   const [selected, setSelected] = useState(0)
 
+  //Set 7 different empty states
+  const [votes, setVote] = useState([0,0,0,0,0,0,0])
+
+  //Use random number generator to change selected
   const randomAnecdote = () => {
     setSelected(Math.floor(Math.random()*anecdotes.length))
+  }
+
+  const handleVotes = () => {
+   
+    //create copy of votes array
+    const copy = [...votes]
+
+    //increment selected by 1
+    copy[selected]++
+
+    //Change state to new array
+    setVote(copy)
   }
   return (
     <div>
       {anecdotes[selected]}<br></br>
+      <h3>has {votes[selected]} votes</h3>
+      <button onClick = {handleVotes}>Vote</button>
       <button id='nextAnecdote' onClick= {randomAnecdote}>Next Anecdote</button>
+      
     </div>
   )
 }
