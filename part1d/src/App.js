@@ -14,22 +14,22 @@ import { useState } from "react"
       <div>
         <table>
           <tbody>
-            Good: {props.good}
-          </tbody>
-          <tbody>
-            Neutral: {props.neutral}
-          </tbody>
-          <tbody>
-            Bad: {props.bad}
-          </tbody>
-          <tbody>
-            All: {props.all}
-          </tbody>
-          <tbody>
-            Average: {props.average}
-          </tbody>
-          <tbody>
-            Positive: {props.positive}
+            <tr><td>Good: {props.good}</td></tr>
+          
+          
+            <tr><td>Neutral: {props.neutral}</td></tr>
+          
+          
+            <tr><td>Bad: {props.bad}</td></tr>
+          
+        
+            <tr><td>All: {props.all}</td></tr>
+         
+        
+            <tr><td>Average: {props.average}</td></tr>
+     
+          
+            <tr><td>Positive: {props.positive}</td></tr>
           </tbody>
       
         </table>
