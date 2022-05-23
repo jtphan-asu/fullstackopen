@@ -1,5 +1,16 @@
 import { useState } from 'react'
 
+
+const MostVotes = (props) =>{
+  return(
+    <div>
+      <p>
+        {props.anecdotes}
+      </p>
+    </div>
+  )
+}
+
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often',
@@ -31,13 +42,32 @@ const App = () => {
     //Change state to new array
     setVote(copy)
   }
+
+  //Find anecdote with most votes
+  const findMostVotes = () => {
+    let max = -1
+    let maxKey = -1
+    
+    for(let key in votes){
+      if(votes[key]>max){
+        maxKey = key
+        max = votes[key]
+      }
+    }
+    return maxKey
+  }
+
   return (
     <div>
       {anecdotes[selected]}<br></br>
       <h3>has {votes[selected]} votes</h3>
       <button onClick = {handleVotes}>Vote</button>
       <button id='nextAnecdote' onClick= {randomAnecdote}>Next Anecdote</button>
-      
+      <h1>Anecdote with most votes</h1>
+      <MostVotes
+            anecdotes = {anecdotes[findMostVotes()]}
+      />
+
     </div>
   )
 }
