@@ -12,12 +12,28 @@ import { useState } from "react"
    }
     return (
       <div>
-        <p>Good: {props.good}</p>
-        <p>Neutral: {props.neutral}</p>
-        <p>Bad: {props.bad}</p>
-        <p>All: {props.all}</p>
-        <p>Average: {props.average}</p>
-        <p>Positive: {props.positive}</p>
+        <table>
+          <tr>
+            <td>Good: {props.good}</td>
+          </tr>
+          <tr>
+            <td>Neutral: {props.neutral}</td>
+          </tr>
+          <tr>
+            <td>Bad: {props.bad}</td>
+          </tr>
+          <tr>
+            <td>All: {props.all}</td>
+          </tr>
+          <tr>
+            <td>Average: {props.average}</td>
+          </tr>
+          <tr>
+            <td>Positive: {props.positive}</td>
+          </tr>
+      
+        </table>
+        
       </div>
     )
 }  
